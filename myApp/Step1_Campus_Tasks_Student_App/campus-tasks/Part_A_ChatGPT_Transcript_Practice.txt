@@ -1,0 +1,37 @@
+PART A CHATGPT ASSISTANCE RECORD
+
+This is a concise record of the Campus Tasks assistance in this conversation, not a word-for-word export of every message.
+
+User context:
+The user provided the debugging laboratory brief. Part A covers loading tasks from JSON, case-insensitive title search, toggling one task's status, and counting open tasks. The user also showed that the browser displayed the default Expo starter screen.
+
+ChatGPT response:
+The browser was serving the outer myApp Expo starter project. The Campus Tasks project is nested at myApp/Step1_Campus_Tasks_Student_App/campus-tasks. Start Expo from that directory to run Campus Tasks.
+
+User prompt:
+The user shared that they were trying to change directories from the Service Tickets folder and received a "No such file or directory" error.
+
+ChatGPT response:
+Because the shell was already inside myApp/Step1_Service_Tickets_Student_App, the relative path should start with ../, not myApp/. The suggested command was:
+cd ../Step1_Campus_Tasks_Student_App/campus-tasks
+
+User prompt:
+The user shared an Expo entry-file error while trying to start Campus Tasks.
+
+ChatGPT response:
+The user was advised to run npm install and then npm run web from the campus-tasks directory.
+
+User prompt:
+The user shared successful Expo startup output and another failed attempt to enter the Service Tickets folder.
+
+ChatGPT response:
+Campus Tasks had started at localhost:8081. Since the user was in the campus-tasks directory, the Service Tickets folder was a sibling, reachable with:
+cd ../../Step1_Service_Tickets_Student_App/service-tickets
+
+User prompt:
+The user clarified that the lab material was for practice and asked for help with the remaining questions.
+
+ChatGPT response:
+The Campus Tasks logic source was reviewed. Its record extraction, case-insensitive search, selected-task toggle, and open-count calculation were already implemented correctly. The user was advised to verify the behaviors manually.
+
+END OF RECORD

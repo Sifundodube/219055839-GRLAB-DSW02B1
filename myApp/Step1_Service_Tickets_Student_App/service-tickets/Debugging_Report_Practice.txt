@@ -1,0 +1,22 @@
+Service Tickets Debugging Report (Practice)
+
+PART B: SERVICE TICKETS
+
+B1. Load tickets
+Diagnosis: The ticket array is in response.data.tickets. Reading the wrong property can return no records.
+Fix: Read response?.data?.tickets and return it if it is an array; otherwise return an empty array.
+Verification: Run the app and check that WiFi access, Printer setup, and Password reset appear. The current logic uses the correct property.
+
+B2. Case-insensitive search
+Diagnosis: A case-sensitive comparison can miss a subject when the search uses different capitalization.
+Fix: Convert both the search text and ticket subject to lowercase before checking whether the subject contains the search text.
+Verification: Search for WIFI and wifi. Both should show the WiFi access ticket. The current logic lowercases both values.
+
+B3. Toggle one ticket
+Diagnosis: An update can change unrelated tickets if it does not identify the selected ticket by ID. Mutating the existing array can also prevent React from detecting the update reliably.
+Fix: Map over the ticket array. For the matching ID, return a new ticket object with status changed from open to done or from done to open. Return all other tickets unchanged.
+Verification: Toggle one ticket and check that only its status changes. Toggle it again and check that it returns to its original status. The current logic follows this approach.
+
+PART C: CODE EXPLANATION
+
+
